@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ff3366;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yes {
+            background-color: #ff3366;
+            color: white;
+            position: relative;
+        }
+
+        #no {
+            background-color: #cccccc;
+            color: black;
+            position: relative;
+        }
+
+        #gif-container {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        #gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #cute-gif {
+            margin-bottom: 1.5rem;
+        }
+
+        #yes-message {
+            font-size: 1.5rem;
+            color: #ff3366;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <img id="cute-gif" src="dudu-giving-flowers-bubu-flowers.gif" alt="Cute Love GIF">
+        <h1 style="font-size: xx-large;">Will You Be My Valentine?</h1>
+        <div class="button-container">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+    <div id="gif-container">
+        <p id="yes-message" style="font-size: xx-large;">You just made my day brighter! 💖</p>
+        <img src="dudu-giving-flowers-bubu-flowers.gif" alt="Love GIF">
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const gifContainer = document.getElementById('gif-container');
+        const mainContainer = document.getElementById('main-container');
+
+        let currentScale = 1; 
+
+        noButton.addEventListener('click', () => {
+            currentScale += 0.3; 
+            yesButton.style.transform = `scale(${currentScale})`;
+            noButton.style.marginLeft = `${currentScale * 50}px`; 
+        });
+
+        yesButton.addEventListener('click', () => {
+            mainContainer.style.display = 'none';
+            gifContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
